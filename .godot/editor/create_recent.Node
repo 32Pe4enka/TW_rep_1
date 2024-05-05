@@ -1,0 +1,10 @@
+Sprite2D
+CollisionShape2D
+CharacterBody2D
+Control
+Node
+TileMap
+Label
+Button
+Panel
+VBoxContainer
