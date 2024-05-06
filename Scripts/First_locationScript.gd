@@ -10,8 +10,8 @@ func update_label(value):
 	get_parent().update_label(value)
 
 func _ready():
-	var items = ["Apple", "Apple", "Apple", "Apple"]
-	for i in range(16):
+	var items = ["Strange apple", "Stick", "Rock", "Strange apple"]
+	for i in range(18):
 		randomize()
 		var a = int(randi_range(0, 3))
 		var new_item = item.instantiate()

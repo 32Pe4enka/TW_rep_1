@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714971258
+::res://::1714972643
 icon.svg::CompressedTexture2D::7708758939189543270::1714923158::1714923170::1::::<><>::
 ::res://Materials/::1714967740
 Main_texture.png::CompressedTexture2D::8314707990271747736::1714959049::1714959050::1::::<><>::
@@ -8,21 +8,25 @@ Player_1.png::CompressedTexture2D::7135262202205144691::1714952293::1714952300::
 Tree1.png::CompressedTexture2D::6844671382884911272::1714956058::1714959812::1::::<><>::
 Tree2.png::CompressedTexture2D::1930131253988572755::1714956416::1714959812::1::::<><>::
 Tree3.png::CompressedTexture2D::8702467749381488763::1714956835::1714959812::1::::<><>::
-::res://Materials/items/::1714961713
-Apple.png::CompressedTexture2D::7105260422519384626::1714961701::1714961713::1::::<><>::
+::res://Materials/items/::1714974500
+Rock.png::CompressedTexture2D::7220035329569941476::1714974470::1714974480::1::::<><>::
+Stick.png::CompressedTexture2D::459295707002111279::1714974228::1714974502::1::::<><>::
+Strange apple.png::CompressedTexture2D::7588467504269538412::1714973860::1714973880::1::::<><>::
 ::res://Materials/Mods/::1714966671
 Skelet.png::CompressedTexture2D::554545618784693683::1714966575::1714966671::1::::<><>::
-::res://Materials/UI/::1714971737
+::res://Materials/UI/::1714971739
 UI_element.png::CompressedTexture2D::7424285796729782157::1714971725::1714971739::1::::<><>::
-::res://Scenes/::1714971377
-First_location.tscn::PackedScene::8839903629104842573::1714971377::0::1::::<><>::uid://dqpya43jervgq::::res://Materials/Main_texture.png<>uid://dv8smwqivtjk2::::res://Materials/Tree3.png<>res://Scripts/First_locationScript.gd<>uid://bavctgy5rc7u8::::res://Scenes/Player.tscn<>uid://reag0njamtxh::::res://Materials/Fir_0.png<>uid://dv10kdkakm5la::::res://Materials/Fir_1.png<>res://Scripts/PlayerScripts.gd
-itemScenes.tscn::PackedScene::3283658031756543237::1714971377::0::1::::<><>::res://Scripts/ItemScripts.gd<>uid://c8h3uo3l7ebbm::::res://Materials/items/Apple.png
+::res://Scenes/::1714974491
+First_location.tscn::PackedScene::8839903629104842573::1714974491::0::1::::<><>::uid://dqpya43jervgq::::res://Materials/Main_texture.png<>uid://dv8smwqivtjk2::::res://Materials/Tree3.png<>res://Scripts/First_locationScript.gd<>uid://bavctgy5rc7u8::::res://Scenes/Player.tscn<>uid://reag0njamtxh::::res://Materials/Fir_0.png<>uid://dv10kdkakm5la::::res://Materials/Fir_1.png<>res://Scripts/PlayerScripts.gd
+itemScenes.tscn::PackedScene::3283658031756543237::1714974271::0::1::::<><>::res://Scripts/ItemScripts.gd<>uid://dgd57lqjv5ybk::::res://Materials/items/Strange apple.png
 Main_menu.tscn::PackedScene::8017601751825079260::1714960044::0::1::::<><>::
-Player.tscn::PackedScene::2429928334199385897::1714971377::0::1::::<><>::uid://fbur0tfi1vl6::::res://Materials/Player_0.png
-root.tscn::PackedScene::1426428450589375404::1714971377::0::1::::<><>::uid://dx7d6k7vhudar::::res://Scenes/First_location.tscn
-::res://Scripts/::1714971126
-First_locationScript.gd::GDScript::-1::1714971126::0::1::::<>Node2D<>::
-ItemScripts.gd::GDScript::-1::1714969618::0::1::::<>Node2D<>::
+Player.tscn::PackedScene::2429928334199385897::1714974271::0::1::::<><>::uid://fbur0tfi1vl6::::res://Materials/Player_0.png
+rootScripts.gd::GDScript::-1::1714972966::0::1::::<>Node2D<>::
+uiScenes.tscn::PackedScene::1376681715165122726::1714974271::0::1::::<><>::uid://dd1m5xe1cftbx::::res://Materials/UI/UI_element.png
+root.tscn::PackedScene::1426428450589375404::1714974271::0::1::::<><>::uid://dx7d6k7vhudar::::res://Scenes/First_location.tscn<>res://Scenes/rootScripts.gd<>uid://tu40ng2sg7la::::res://Scenes/uiScenes.tscn
+::res://Scripts/::1714974491
+First_locationScript.gd::GDScript::-1::1714974491::0::1::::<>Node2D<>::
+ItemScripts.gd::GDScript::-1::1714972953::0::1::::<>Node2D<>::
 Label_script.gd::GDScript::-1::1714932295::0::1::::<>Label<>::
-PlayerScripts.gd::GDScript::-1::1714967475::0::1::::<>CharacterBody2D<>::
+PlayerScripts.gd::GDScript::-1::1714972192::0::1::::<>CharacterBody2D<>::
 ::res://Tilesets/::1714929015
