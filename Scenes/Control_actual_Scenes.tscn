@@ -12,7 +12,9 @@ script/source = "extends \"res://Scripts/PlayerScripts.gd\"
 var is_running = false
 var Inventory = {}
 
-#Inventory['Strange apple'] = [3, 12]
+func _ready():
+	self.Health = 76
+	set_HP(self.Health, self.Max_health)
 
 func pick(item):
 	var it = item.get_item()
@@ -65,3 +67,9 @@ centered = false
 shape = SubResource("RectangleShape2D_dwshu")
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
+
+[node name="BarHP" parent="." index="3"]
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 27.0
+offset_bottom = -2.0

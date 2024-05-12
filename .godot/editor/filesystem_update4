@@ -3,3 +3,4 @@ res://Scenes/First_location.tscn
 res://Scenes/Player.tscn
 res://Scenes/Control_actual_Scenes.tscn
 res://Scenes/panel_invt.tscn
+res://Scripts/PlayerScripts.gd

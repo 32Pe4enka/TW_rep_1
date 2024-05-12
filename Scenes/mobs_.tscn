@@ -24,6 +24,9 @@ var stop_move = Vector2()
 
 func _ready():
 	speed = default_speed
+	self.Health = 34
+	self.Max_health = 65
+	set_HP(self.Health, self.Max_health)
 
 func _process(delta):
 	if velocity:
@@ -186,5 +189,11 @@ position = Vector2(15.5, 16)
 shape = SubResource("RectangleShape2D_0dlh5")
 
 [node name="StandsTimer" type="Timer" parent="." index="2"]
+
+[node name="BarHP" parent="." index="3"]
+offset_left = 5.0
+offset_top = -2.0
+offset_right = 26.0
+offset_bottom = 0.0
 
 [connection signal="timeout" from="StandsTimer" to="." method="_on_stands_timer_timeout"]

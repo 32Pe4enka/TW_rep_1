@@ -1,13 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bavctgy5rc7u8"]
+[gd_scene load_steps=4 format=3 uid="uid://bavctgy5rc7u8"]
+
+[ext_resource type="Texture2D" uid="uid://cp2hhemlxbv2v" path="res://Materials/Interface/Hp_bar_0.png" id="1_eoj55"]
+[ext_resource type="Texture2D" uid="uid://wscebe7cnq2t" path="res://Materials/Interface/Hp_bar_1.png" id="2_k1m4k"]
 
 [sub_resource type="GDScript" id="GDScript_gk62h"]
 resource_name = "MobsScripts"
 script/source = "extends CharacterBody2D
 
-@export var speed = 150
-@onready var ui = get_viewport().get_node(\"Root/UI/Control\")
+@export var Max_health = 100
+@onready var Health = 85
+var speed = 150
 
-var is_running = false
+func _ready():
+	set_HP(Health, Max_health)
+
+func set_HP(Health, Max_health):
+	$BarHP.value = Health
+	$BarHP.max_value = Max_health	
+
+func update_health():
+	$BarHP.value = Health	
 "
 
 [node name="Player" type="CharacterBody2D"]
@@ -15,3 +27,11 @@ script = SubResource("GDScript_gk62h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16.5, 16)
+
+[node name="BarHP" type="TextureProgressBar" parent="."]
+offset_right = 63.0
+offset_bottom = 8.0
+value = 32.0
+nine_patch_stretch = true
+texture_over = ExtResource("1_eoj55")
+texture_progress = ExtResource("2_k1m4k")
