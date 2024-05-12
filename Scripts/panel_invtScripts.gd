@@ -13,6 +13,7 @@ func clear():
 		i.queue_free()
 		
 func show_inventory(Inventory):
+	clear()
 	for i in Inventory.keys():
 		var new_item = item.instantiate()
 		container.add_child(new_item)

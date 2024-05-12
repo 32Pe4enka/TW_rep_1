@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715536017
+::res://::1715538539
 icon.svg::CompressedTexture2D::7708758939189543270::1714923158::1714923170::1::::<><>::
 ::res://Materials/::1714967740
 Main_texture.png::CompressedTexture2D::8314707990271747736::1714959049::1714959050::1::::<><>::
@@ -16,21 +16,26 @@ Strange apple.png::CompressedTexture2D::7588467504269538412::1714973860::1714973
 Skelet.png::CompressedTexture2D::554545618784693683::1714966575::1714966671::1::::<><>::
 ::res://Materials/UI/::1714971739
 UI_element.png::CompressedTexture2D::7424285796729782157::1714971725::1714971739::1::::<><>::
-::res://Scenes/::1715535995
-First_location.tscn::PackedScene::8839903629104842573::1715521647::0::1::::<><>::uid://dqpya43jervgq::::res://Materials/Main_texture.png<>uid://dv8smwqivtjk2::::res://Materials/Tree3.png<>res://Scripts/First_locationScript.gd<>uid://bavctgy5rc7u8::::res://Scenes/Player.tscn<>uid://reag0njamtxh::::res://Materials/Fir_0.png<>uid://dv10kdkakm5la::::res://Materials/Fir_1.png<>res://Scripts/PlayerScripts.gd
-invt_itemScenes.tscn::PackedScene::8273257829675918530::1715535409::0::1::::<><>::uid://dgd57lqjv5ybk::::res://Materials/items/Strange apple.png<>res://Scripts/InvtItemScript.gd
-itemScenes.tscn::PackedScene::3283658031756543237::1715532895::0::1::::<><>::res://Scripts/ItemScripts.gd<>uid://dgd57lqjv5ybk::::res://Materials/items/Strange apple.png
+::res://Scenes/::1715538720
+First_location.tscn::PackedScene::8839903629104842573::1715538567::0::1::::<><>::uid://dqpya43jervgq::::res://Materials/Main_texture.png<>uid://dv8smwqivtjk2::::res://Materials/Tree3.png<>res://Scripts/First_locationScript.gd<>uid://bavctgy5rc7u8::::res://Scenes/Player.tscn<>uid://reag0njamtxh::::res://Materials/Fir_0.png<>uid://dv10kdkakm5la::::res://Materials/Fir_1.png<>res://Scripts/PlayerScripts.gd
+invt_itemScenes.tscn::PackedScene::8273257829675918530::1715538544::0::1::::<><>::uid://dgd57lqjv5ybk::::res://Materials/items/Strange apple.png<>res://Scripts/InvtItemScript.gd
+itemScenes.tscn::PackedScene::3283658031756543237::1715538544::0::1::::<><>::res://Scripts/ItemScripts.gd<>uid://dgd57lqjv5ybk::::res://Materials/items/Strange apple.png
 Main_menu.tscn::PackedScene::8017601751825079260::1714960044::0::1::::<><>::
-panel_invt.tscn::PackedScene::3068287159840325124::1715535995::0::1::::<><>::uid://dd1m5xe1cftbx::::res://Materials/UI/UI_element.png<>res://Scripts/panel_invtScripts.gd<>uid://dp4vl27wkfkpu::::res://Scenes/invt_itemScenes.tscn
-Player.tscn::PackedScene::2429928334199385897::1715532757::0::1::::<><>::uid://fbur0tfi1vl6::::res://Materials/Player_0.png
+panel_invt.tscn::PackedScene::3068287159840325124::1715538127::0::1::::<><>::uid://dd1m5xe1cftbx::::res://Materials/UI/UI_element.png<>res://Scripts/panel_invtScripts.gd<>uid://dp4vl27wkfkpu::::res://Scenes/invt_itemScenes.tscn
+Player.tscn::PackedScene::2429928334199385897::1715538544::0::1::::<><>::uid://fbur0tfi1vl6::::res://Materials/Player_0.png
+Player_Actual.tscn::PackedScene::1268824710173842232::1715538609::0::1::::<><>::uid://bavctgy5rc7u8::::res://Scenes/Player.tscn<>res://Scripts/Player_Actual.gd
+Angry_mobs_0.tscn::PackedScene::2878015594227947086::1715538755::0::1::::<><>::uid://bavctgy5rc7u8::::res://Scenes/Player.tscn
+Angry_mobs_0.gd::GDScript::-1::1715538755::0::1::::<>CharacterBody2D<>::
 root.tscn::PackedScene::1426428450589375404::1715532808::0::1::::<><>::uid://dx7d6k7vhudar::::res://Scenes/First_location.tscn<>res://Scripts/rootScripts.gd<>uid://tu40ng2sg7la::::res://Scenes/uiScenes.tscn
-uiScenes.tscn::PackedScene::1376681715165122726::1715521647::0::1::::<><>::uid://dd1m5xe1cftbx::::res://Materials/UI/UI_element.png
-::res://Scripts/::1715535995
+uiScenes.tscn::PackedScene::1376681715165122726::1715538084::0::1::::<><>::res://Scripts/UI_Control.gd<>uid://bjykig4x8bkqe::::res://Scenes/panel_invt.tscn
+::res://Scripts/::1715538606
 First_locationScript.gd::GDScript::-1::1714974532::0::1::::<>Node2D<>::
 InvtItemScript.gd::GDScript::-1::1715533703::0::1::::<>TextureRect<>::
 ItemScripts.gd::GDScript::-1::1715532895::0::1::::<>Node2D<>::
 Label_script.gd::GDScript::-1::1714932295::0::1::::<>Label<>::
-panel_invtScripts.gd::GDScript::-1::1715535995::0::1::::<>NinePatchRect<>::
-PlayerScripts.gd::GDScript::-1::1715532757::0::1::::<>CharacterBody2D<>::
+panel_invtScripts.gd::GDScript::-1::1715537270::0::1::::<>NinePatchRect<>::
+PlayerScripts.gd::GDScript::-1::1715538521::0::1::::<>CharacterBody2D<>::
+Player_Actual.gd::GDScript::-1::1715538606::0::1::::<>CharacterBody2D<>::
 rootScripts.gd::GDScript::-1::1714972966::0::1::::<>Node2D<>::
+UI_Control.gd::GDScript::-1::1715537239::0::1::::<>Control<>::
 ::res://Tilesets/::1714929015

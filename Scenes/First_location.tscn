@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dqpya43jervgq" path="res://Materials/Main_texture.png" id="1_e6ido"]
 [ext_resource type="Texture2D" uid="uid://dv8smwqivtjk2" path="res://Materials/Tree3.png" id="1_p2u20"]
 [ext_resource type="Script" path="res://Scripts/First_locationScript.gd" id="1_xdi0p"]
-[ext_resource type="PackedScene" uid="uid://bavctgy5rc7u8" path="res://Scenes/Player.tscn" id="2_3kqq6"]
 [ext_resource type="Texture2D" uid="uid://reag0njamtxh" path="res://Materials/Fir_0.png" id="2_cgbp8"]
 [ext_resource type="Texture2D" uid="uid://dv10kdkakm5la" path="res://Materials/Fir_1.png" id="3_m8cpw"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts.gd" id="3_rbcfd"]
+[ext_resource type="PackedScene" uid="uid://scvmfncmb11u" path="res://Scenes/Player_Actual.tscn" id="6_mg381"]
+[ext_resource type="PackedScene" uid="uid://bhaeq41xf8k8m" path="res://Scenes/Angry_mobs_0.tscn" id="7_uan34"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2c7m"]
 texture = ExtResource("1_p2u20")
@@ -111,6 +111,68 @@ layer_1/tile_data = PackedInt32Array(458745, 589826, 0, -1703938, 589826, 0, -25
 
 [node name="Items" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("2_3kqq6")]
-position = Vector2(402, 235)
-script = ExtResource("3_rbcfd")
+[node name="CharacterBody2D2" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(124, -88)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(525, -36)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(785, 182)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(646, 350)
+
+[node name="CharacterBody2D6" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(846, 379)
+
+[node name="CharacterBody2D7" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(1366, 297)
+
+[node name="CharacterBody2D8" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(-241, 413)
+
+[node name="CharacterBody2D9" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(-14, 349)
+
+[node name="CharacterBody2D10" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(-272, -418)
+
+[node name="CharacterBody2D11" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(24, -525)
+
+[node name="CharacterBody2D12" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(109, -715)
+
+[node name="CharacterBody2D13" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(39, -840)
+
+[node name="CharacterBody2D14" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(365, -930)
+
+[node name="CharacterBody2D15" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(461, -832)
+
+[node name="CharacterBody2D16" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(700, -483)
+
+[node name="CharacterBody2D17" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(662, -371)
+
+[node name="CharacterBody2D18" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(885, -395)
+
+[node name="CharacterBody2D19" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(1309, -314)
+
+[node name="CharacterBody2D20" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(1346, -164)
+
+[node name="CharacterBody2D21" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(2005, -200)
+
+[node name="CharacterBody2D22" parent="." instance=ExtResource("7_uan34")]
+position = Vector2(1793, -830)
+
+[node name="Player" parent="." instance=ExtResource("6_mg381")]
+position = Vector2(300, -722)

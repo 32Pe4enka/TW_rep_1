@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://scvmfncmb11u"]
+
+[ext_resource type="PackedScene" uid="uid://bavctgy5rc7u8" path="res://Scenes/Player.tscn" id="1_2gomt"]
+[ext_resource type="Script" path="res://Scripts/Player_Actual.gd" id="2_urvri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0nab"]
+size = Vector2(20, 32)
+
+[node name="CharacterBody2D" instance=ExtResource("1_2gomt")]
+script = ExtResource("2_urvri")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_j0nab")
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
