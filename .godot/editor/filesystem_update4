@@ -1,9 +1,2 @@
-res://Scenes/root.tscn
-res://Scenes/First_location.tscn
-res://Scenes/Player.tscn
-res://Scenes/itemScenes.tscn
-res://Scenes/uiScenes.tscn
-res://Scenes/rootScripts.gd
-res://Scripts/PlayerScripts.gd
-res://Scripts/First_locationScript.gd
-res://Scripts/ItemScripts.gd
+res://Scenes/panel_invt.tscn
+res://Scripts/panel_invtScripts.gd

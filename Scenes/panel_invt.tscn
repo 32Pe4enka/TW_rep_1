@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjykig4x8bkqe"]
+
+[ext_resource type="Texture2D" uid="uid://dd1m5xe1cftbx" path="res://Materials/UI/UI_element.png" id="1_5l6h0"]
+[ext_resource type="Script" path="res://Scripts/panel_invtScripts.gd" id="2_63nt0"]
+[ext_resource type="PackedScene" uid="uid://dp4vl27wkfkpu" path="res://Scenes/invt_itemScenes.tscn" id="2_yu2tt"]
+
+[node name="PanelInvt" type="NinePatchRect"]
+custom_minimum_size = Vector2(540, 220)
+offset_right = 538.0
+offset_bottom = 215.0
+texture = ExtResource("1_5l6h0")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+script = ExtResource("2_63nt0")
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 531.0
+offset_bottom = 212.0
+
+[node name="Grid" type="GridContainer" parent="Scroll"]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+columns = 14
+
+[node name="InvtItem" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem2" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem3" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem4" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem5" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem6" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem7" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem8" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem9" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem10" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem11" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem12" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem13" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem14" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2
+
+[node name="InvtItem15" parent="Scroll/Grid" instance=ExtResource("2_yu2tt")]
+layout_mode = 2

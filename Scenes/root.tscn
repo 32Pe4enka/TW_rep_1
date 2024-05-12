@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://uk8ck2v6gabk"]
 
 [ext_resource type="PackedScene" uid="uid://dx7d6k7vhudar" path="res://Scenes/First_location.tscn" id="1_cq3hl"]
-[ext_resource type="Script" path="res://Scenes/rootScripts.gd" id="1_yxglg"]
+[ext_resource type="Script" path="res://Scripts/rootScripts.gd" id="1_yxglg"]
 [ext_resource type="PackedScene" uid="uid://tu40ng2sg7la" path="res://Scenes/uiScenes.tscn" id="2_f5nn2"]
 
 [node name="Root" type="Node2D"]
