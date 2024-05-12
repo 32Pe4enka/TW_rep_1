@@ -4,18 +4,17 @@ extends Node2D
 
 func get_player():
 	return $Player
-	
 
 func update_label(value):
 	get_parent().update_label(value)
 
 func _ready():
-	var items = ["Strange apple", "Stick", "Rock", "Strange apple"]
-	for i in range(18):
+	var items = [["Strange apple", 3], ["Stick", 8], ["Rock", 5]]
+	for i in range(24):
 		randomize()
-		var a = int(randi_range(0, 3))
+		var a = int(randi_range(0, 2))
 		var new_item = item.instantiate()
 		$Items.add_child(new_item)
 		new_item.set_item(items[a])
-		new_item.position = Vector2(int(randi_range(0, 32 * 67)), int(randi_range(0, 321)))
+		new_item.position = Vector2(int(randf_range(0, 32 * 74)), int(randf_range(0, 32 * 60)))
 	pass

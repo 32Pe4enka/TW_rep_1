@@ -1,12 +1,17 @@
 [gd_scene load_steps=2 format=3 uid="uid://bavctgy5rc7u8"]
 
-[ext_resource type="Texture2D" uid="uid://fbur0tfi1vl6" path="res://Materials/Player_0.png" id="1_yhdy7"]
+[sub_resource type="GDScript" id="GDScript_gk62h"]
+resource_name = "MobsScripts"
+script/source = "extends CharacterBody2D
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+@export var speed = 150
+@onready var ui = get_viewport().get_node(\"Root/UI/Control\")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_yhdy7")
-centered = false
+var is_running = false
+"
+
+[node name="Player" type="CharacterBody2D"]
+script = SubResource("GDScript_gk62h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16.5, 16)

@@ -15,6 +15,15 @@ func clear():
 func show_inventory(Inventory):
 	clear()
 	for i in Inventory.keys():
-		var new_item = item.instantiate()
-		container.add_child(new_item)
-		new_item.set_item(i, Inventory[i])
+		var amount = Inventory[i][0]
+		for j in range(amount / Inventory[i][1] + 1):
+		
+			var new_item = item.instantiate()
+			if amount >= Inventory[i][1]:
+				container.add_child(new_item)
+				new_item.set_item(i, Inventory[i][1])
+				amount -= Inventory[i][1]
+			elif amount > 0:
+				container.add_child(new_item)
+				new_item.set_item(i, amount)
+				amount = 0

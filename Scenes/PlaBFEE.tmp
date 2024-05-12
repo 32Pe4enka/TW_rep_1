@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://bavctgy5rc7u8"]
+
+[ext_resource type="Texture2D" uid="uid://fbur0tfi1vl6" path="res://Materials/Player_0.png" id="1_yhdy7"]
+
+[sub_resource type="GDScript" id="GDScript_gk62h"]
+resource_name = "MobsScripts"
+script/source = "extends CharacterBody2D
+
+@export var speed = 150
+@onready var ui = get_viewport().get_node(\"Root/UI/Control\")
+
+var items = 0
+var is_running = false
+var Inventory = {}
+
+func pick(item):
+	var it = item.get_item()
+	if it in Inventory.keys():
+		Inventory[it] += item.get_amount()
+	else: 
+		Inventory[it] = item.get_amount()
+
+func get_input():
+	var input_direction = Input.get_vector(\"Left\", \"Right\", \"Up\", \"Down\")
+	
+	if Input.is_action_pressed(\"Run\"):
+		is_running = true
+	else:
+		is_running = false
+		
+	velocity = input_direction * (speed * 2 if is_running else speed)
+
+func _physics_process(_delta):
+	get_input()
+	move_and_slide()
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"Inventory\"):
+		ui.toggle_inventory(Inventory)
+
+#func _run(_delta):
+	#if input.is_action_pressed(\"run\") and move_and_slide(_delta):
+		#run_state()
+#
+#func _run_state(_delta):
+	#speed = 300
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ka24"]
+size = Vector2(20, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = SubResource("GDScript_gk62h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yhdy7")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, 16)
+shape = SubResource("RectangleShape2D_2ka24")
+
+[node name="Camera2D" type="Camera2D" parent="."]

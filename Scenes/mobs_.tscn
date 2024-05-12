@@ -1,0 +1,190 @@
+[gd_scene load_steps=14 format=3 uid="uid://b7wdewexml54x"]
+
+[ext_resource type="PackedScene" uid="uid://bavctgy5rc7u8" path="res://Scenes/Player.tscn" id="1_mr6tv"]
+[ext_resource type="Texture2D" uid="uid://h5vjx3jcg0vv" path="res://Materials/Mobs/Skelet.png" id="2_xv42c"]
+[ext_resource type="Texture2D" uid="uid://dc8heo56a7o78" path="res://Materials/Mobs/Mobs Animation/Down/Skelet_walk_Down_0.png" id="3_2u11i"]
+[ext_resource type="Texture2D" uid="uid://1ctnnis1k03w" path="res://Materials/Mobs/Mobs Animation/Down/Skelet_walk_Down_1.png" id="4_ufgo5"]
+[ext_resource type="Texture2D" uid="uid://b48hxjdy8mqbt" path="res://Materials/Mobs/Mobs Animation/Left/Skelet_walk_left_0.png" id="5_ml7m0"]
+[ext_resource type="Texture2D" uid="uid://c1qx54w7vjq2v" path="res://Materials/Mobs/Mobs Animation/Left/Skelet_walk_left_1.png" id="6_n1vpq"]
+[ext_resource type="Texture2D" uid="uid://ct4ii78la87yj" path="res://Materials/Mobs/Mobs Animation/Left/Skelet_walk_left_2.png" id="7_pd71q"]
+[ext_resource type="Texture2D" uid="uid://d2rlcihnkqkah" path="res://Materials/Mobs/Mobs Animation/Up/Skelet_spina.png" id="8_m2nhu"]
+[ext_resource type="Texture2D" uid="uid://bsopayhwxofbp" path="res://Materials/Mobs/Mobs Animation/Up/Skelet_spina_walk_left.png" id="9_q64s7"]
+[ext_resource type="Texture2D" uid="uid://b846t25jnmfgm" path="res://Materials/Mobs/Mobs Animation/Up/Skelet_spina_walk_right.png" id="10_i0bjt"]
+
+[sub_resource type="GDScript" id="GDScript_hotpv"]
+script/source = "extends \"res://Scripts/PlayerScripts.gd\"
+
+var stands = true
+var target = null
+
+var default_speed = 50
+
+var destination = Vector2()
+var stop_move = Vector2()
+
+func _ready():
+	speed = default_speed
+
+func _process(delta):
+	if velocity:
+		stop_move = position
+		move_and_slide()
+		position.x = clamp(position.x, 0, 10000)
+		position.y = clamp(position.y, 0, 10000)
+	wander()
+	search_for_target()
+	
+func search_for_target():
+	var PL = get_parent().get_parent().get_player()
+	
+	if target:
+		if position.distance_to(target.position) > 200:
+			cancel_movement()
+		else:
+			set_destination(target.position)
+	
+	elif position.distance_to(PL.position) < 200:
+		cancel_movement()
+		speed = default_speed * 2 if speed == default_speed else speed
+		target = PL
+
+func set_destination(dest):
+	destination = dest
+	velocity = (destination - position).normalized() * speed
+	
+	if abs(dest.x - position.x) > abs(dest.y - position.y):
+		$MobsSprite.play(\"Movement\")
+	elif velocity.y < 0:
+		$MobsSprite.play(\"Up\")
+	else:
+		$MobsSprite.play(\"Down\")
+		
+	$MobsSprite.flip_h = velocity.x < 0
+	
+	stands = false
+
+func cancel_movement():
+	$MobsSprite.play(\"Stand\")
+	velocity = Vector2()
+	destination = Vector2()
+	speed = default_speed
+	$StandsTimer.start(2)
+	target = null
+
+func wander():
+	var pos = position
+	if stands:
+		randomize()
+		
+		var x = int(randf_range(pos.x - 150, pos.x + 150))
+		var y = int(randf_range(pos.y - 150, pos.y + 150))
+		
+		
+		x = clamp(x, 0, 10000)
+		y = clamp(y, 0, 10000)		
+		
+		set_destination(Vector2(x, y))
+	elif velocity != Vector2() and not target:
+		if pos.distance_to(destination) <= speed:
+			cancel_movement()
+			
+		elif pos.distance_to(stop_move) <= 0.6:
+			cancel_movement()
+
+
+func _on_stands_timer_timeout():
+	stands = true
+	pass # Replace with function body.
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pc2ah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xv42c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2u11i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xv42c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ufgo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xv42c")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ml7m0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n1vpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ml7m0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pd71q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ml7m0")
+}],
+"loop": true,
+"name": &"Movement",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xv42c")
+}],
+"loop": true,
+"name": &"Stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_m2nhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q64s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m2nhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i0bjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m2nhu")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dlh5"]
+size = Vector2(15, 28)
+
+[node name="Mobs_" instance=ExtResource("1_mr6tv")]
+script = SubResource("GDScript_hotpv")
+
+[node name="MobsSprite" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_pc2ah")
+animation = &"Up"
+frame = 2
+frame_progress = 0.606316
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(15.5, 16)
+shape = SubResource("RectangleShape2D_0dlh5")
+
+[node name="StandsTimer" type="Timer" parent="." index="2"]
+
+[connection signal="timeout" from="StandsTimer" to="." method="_on_stands_timer_timeout"]

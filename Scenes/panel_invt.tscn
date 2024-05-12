@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dp4vl27wkfkpu" path="res://Scenes/invt_itemScenes.tscn" id="2_yu2tt"]
 
 [node name="PanelInvt" type="NinePatchRect"]
-custom_minimum_size = Vector2(540, 220)
-offset_right = 538.0
-offset_bottom = 215.0
+offset_right = 270.0
+offset_bottom = 110.0
 texture = ExtResource("1_5l6h0")
 patch_margin_left = 2
 patch_margin_top = 2
@@ -19,8 +18,8 @@ script = ExtResource("2_63nt0")
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 531.0
-offset_bottom = 212.0
+offset_right = 261.0
+offset_bottom = 102.0
 
 [node name="Grid" type="GridContainer" parent="Scroll"]
 layout_mode = 2
